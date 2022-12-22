@@ -1,7 +1,7 @@
 <template>
     <h1> Team Generator </h1>
     <PlayerList @delete-player="deletePlayer" :players = players />
-    <AddPlayer/>
+    <AddPlayer @add-player="addPlayer" />
 </template>
   
 <script>
@@ -20,6 +20,9 @@
             }
         },
         methods: {
+            addPlayer(player) {
+                this.players = [...this.players, player]
+            },
             deletePlayer(player) {
                 this.players = this.players.filter( (playerName) => playerName !== player)
                 console.log(player + " removed")

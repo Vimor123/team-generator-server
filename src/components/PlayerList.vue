@@ -12,7 +12,7 @@
         },
         methods: {
             removePlayer(player) {
-                this.$emit('delete-player', player);
+                this.$emit('delete-player', player)
             }
         },
         emits: ['delete-player']
