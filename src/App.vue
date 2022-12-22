@@ -19,17 +19,29 @@
                 players: []
             }
         },
+        mounted() {
+            if(localStorage.getItem("players")) {
+                try {
+                    this.players = JSON.parse(localStorage.getItem("players"))
+                } catch(e) {
+                    localStorage.removeItem("players")
+                }
+            }
+        },
         methods: {
             addPlayer(player) {
                 this.players = [...this.players, player]
+                this.persist()
             },
             deletePlayer(player) {
                 this.players = this.players.filter( (playerName) => playerName !== player)
                 console.log(player + " removed")
+                this.persist()
+            },
+            persist() {
+                const parsed = JSON.stringify(this.players)
+                localStorage.setItem("players", parsed)
             }
-        },
-        created() {
-            this.players = ["Dean Dužnović", "Dario Sabljić", "Tonći Piplović", "Ivan Pilat", "Tin Švelec"]
         }
     }
 </script>
