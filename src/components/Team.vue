@@ -1,6 +1,6 @@
 <template>
-    <div v-for="player in team">
-        <h3> {{ player }} </h3>
+    <div v-for="player in team" class="player-in-team-container">
+        <span class="player-in-team-name"> {{ player }} </span>
     </div>
 </template>
 

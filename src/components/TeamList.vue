@@ -1,6 +1,6 @@
 <template>
-    <div v-for="(team, index) in teams" class="team-player-container">
-        <h3> Team {{ index + 1 }} </h3>
+    <div v-for="(team, index) in teams" class="team-container">
+        <h3 class="team-title"> Team {{ index + 1 }} </h3>
         <Team :team = team />
     </div>
 </template>

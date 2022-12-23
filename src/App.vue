@@ -15,7 +15,10 @@
             </div>
         </div>
         <div class="right-container">
-            <TeamList :teams = teams />
+            <h2 class="teams-title"> Teams </h2>
+            <div class="teams-container">
+                <TeamList :teams = teams />
+            </div>
         </div>
     </div>
 
