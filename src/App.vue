@@ -2,17 +2,20 @@
     <h1> Team Generator </h1>
     <PlayerList @delete-player="deletePlayer" :players = players />
     <AddPlayer @add-player="addPlayer" />
+    <GenerateTeams />
 </template>
   
 <script>
     import PlayerList from './components/PlayerList.vue';
     import AddPlayer from './components/AddPlayer.vue';
+    import GenerateTeams from './components/GenerateTeams.vue';
 
     export default {
         name: "App",
         components: {
             PlayerList,
-            AddPlayer
+            AddPlayer,
+            GenerateTeams
         },
         data() {
             return {
