@@ -21,6 +21,6 @@
 
 <style scoped>
     .rm-btn {
-        color: crimson
+        color: rgb(6, 87, 60)
     }
 </style>
