@@ -1,10 +1,11 @@
 <template>
-    <div class="generate-teams-container">
-        <form @submit="onSubmit" class="generate-teams">
-            <input type="number" v-model="noOfTeams" name="no-of-teams" placeholder="Number of teams"/>
-            <button class="btn" type="submit"> Generate Teams </button>
-        </form>
-    </div>
+    <form @submit="onSubmit" class="generate-teams">
+        <div class="no-of-teams-row">
+            <span class="no-of-teams-text"> Number of teams: </span>
+            <input type="number" v-model="noOfTeams" name="no-of-teams" class="no-of-teams-input"/>
+        </div>
+        <button class="generate-teams-btn" type="submit"> Generate </button>
+    </form>
 </template>
 
 <script>

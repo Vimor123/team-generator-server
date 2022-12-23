@@ -1,9 +1,23 @@
 <template>
-    <h1> Team Generator </h1>
-    <PlayerList @delete-player="deletePlayer" :players = players />
-    <AddPlayer @add-player="addPlayer" />
-    <GenerateTeams @generate-teams="generateTeams" />
-    <TeamList :teams = teams />
+    <div class="title-container">
+        <h1 class="title-text"> Team Generator </h1>
+    </div>
+    <div class="main-container">
+        <div class="left-container">
+            <div class="left-content-container">
+                <h2 class="players-title"> Players </h2>
+                <PlayerList @delete-player="deletePlayer" :players = players />
+                <AddPlayer @add-player="addPlayer" />
+            </div>
+            <div class="left-content-container">
+                <h2 class="generate-teams-title"> Generate Teams </h2>
+                <GenerateTeams @generate-teams="generateTeams" />
+            </div>
+        </div>
+        <div class="right-container">
+            <TeamList :teams = teams />
+        </div>
+    </div>
 
 </template>
   
@@ -42,7 +56,9 @@
                 this.persist()
             },
             deletePlayer(player) {
-                this.players = this.players.filter( (playerName) => playerName !== player)
+                //this.players = this.players.filter( (playerName) => playerName !== player)
+                let index = this.players.indexOf(player)
+                this.players.splice(index, 1)
                 console.log(player + " removed")
                 this.persist()
             },
@@ -86,6 +102,3 @@
         }
     }
 </script>
-  
-<style scoped>
-</style>
