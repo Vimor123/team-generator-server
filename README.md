@@ -1,6 +1,6 @@
 # team-generator-server
 
-Team Generator Server
+Team Generator Server - site available at : https://phenomenal-narwhal-39925e.netlify.app/
 
 ## Premise
 
